@@ -14,26 +14,31 @@ function setModalCenter(modal, modalWidth) {
 	var top = (h - modalHeight) / 2;
 
 	if (modalHeight < h && modalWidth < w) {
-		modal.css('float','left');
-		modal.css('position', 'fixed');
-		modal.offset({left: left, top: top});
+		modal.animate({
+			left: left,
+			top: top,
+			width: modalWidth,
+		}, 'fast', 'linear');
 	}
 }
 
 $(function(){
 
 	$('#openDialog').click(function(){
-		$('.modal').each(function(){
-			// $('body').prepend("<div></div>")
-			$(this).show();
-			setModalCenter($(this), 500);
-		});
+		$('.modal-bg').show();
+		$('.modal').show();
+		setModalCenter($('.modal'), 500);
 	});
 
 	$(window).resize(function(){
-		console.log(0);
-		if ($('modal').css('display') != 'none') {
-			setModalCenter($(this), 500);
+		if ($('.modal').css('display') != 'none') {
+			setModalCenter($('.modal'), 500);
 		}
 	});
+
+	$('.modal .dismiss').click(function(){
+		$('.modal-bg').hide();
+		$('.modal').hide();
+	});
+	
 });
