@@ -1,14 +1,15 @@
 var map;
 
 function initMap() {
-    $(function() {
-        map = new google.maps.Map($('.gmap')[0], {
-            center: { lat: -34.397, lng: 150.644 },
-            zoom: 8
-        });
+    map = new google.maps.Map($('.gmap')[0], {
+        center: {
+            lat: 10.7681596,
+            lng: 106.6943671
+        },
+        zoom: 13,
+        mapTypeControlOptions: {
+            style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+            position: google.maps.ControlPosition.BOTTOM_CENTER
+        }
     });
 }
-
-
-
-//AIzaSyDia01skabytp_FX9ErPReOhOtCBxDn5Dw
