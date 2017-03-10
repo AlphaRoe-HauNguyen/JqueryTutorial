@@ -22,11 +22,14 @@ $(function() {
     $('#txtSearch').keypress(function(e) {
 
         if (e.which == 13) {
+            var address = $('#txtSearch').val();
+            if (address == "") {
+                return false;
+            }
             if (marker !== null) {
                 marker.setMap(null);
             }
-
-            var address = $('#txtSearch').val();
+            
             $.ajax({
                 url: 'https://maps.googleapis.com/maps/api/geocode/json?address=' + address,
                 success: function(result) {
