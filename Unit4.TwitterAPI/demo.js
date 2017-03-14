@@ -14,13 +14,14 @@ function MyTwitterApp(apiKey, apiSecret) {
 			method: 'post',
 			data: "grant_type=client_credentials",
 			contentType : "application/x-www-form-urlencoded;charset=UTF-8",
-			// headers: {
-			// 	"Content-Type" : "application/x-www-form-urlencoded;charset=UTF-8",
-			// 	"Authorization" : "Basic " + $this.bearToken,
-			// 	"Access-Control-Allow-Origin" : "*",
-			// 	"Access-Control-Allow-Methods" : "GET, POST, PATCH, PUT, DELETE, OPTIONS",
-			// 	"Access-Control-Allow-Headers" : "Origin, Content-Type, X-Auth-Token"
-			// },
+			crossDomain: true,
+			headers: {
+				"Content-Type" : "application/x-www-form-urlencoded;charset=UTF-8",
+				"Authorization" : "Bear " + $this.bearToken;
+				// "Access-Control-Allow-Origin" : "*",
+				// "Access-Control-Allow-Methods" : "GET, POST, PATCH, PUT, DELETE, OPTIONS",
+				// "Access-Control-Allow-Headers" : "Origin, Content-Type, X-Auth-Token"
+			},
 			dataType: "json",
 			beforeSend: function(xhr) {
 				xhr.setRequestHeader("Authorization", "Basic " + $this.bearToken);
@@ -29,6 +30,9 @@ function MyTwitterApp(apiKey, apiSecret) {
 			success: function(data) {
 				console.log(1);
 				console.info(data);
+			},
+			error: function(err) {
+				console.log(err);
 			}
 		});
 	}
