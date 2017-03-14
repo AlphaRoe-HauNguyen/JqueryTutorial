@@ -17,7 +17,7 @@ function MyTwitterApp(apiKey, apiSecret) {
 			crossDomain: true,
 			headers: {
 				"Content-Type" : "application/x-www-form-urlencoded;charset=UTF-8",
-				"Authorization" : "Bear " + $this.bearToken;
+				"Authorization" : "Bear " + $this.bearToken,
 				// "Access-Control-Allow-Origin" : "*",
 				// "Access-Control-Allow-Methods" : "GET, POST, PATCH, PUT, DELETE, OPTIONS",
 				// "Access-Control-Allow-Headers" : "Origin, Content-Type, X-Auth-Token"
