@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Demo for Inheritance via Prototype</title>
+    <link rel="stylesheet" href="https://bootswatch.com/paper/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center">Javascript - Inheritance</h1>
+        <div class="well">
+            <div><code>function&nbsp;Monkey()&nbsp;{</code></div>
+            <div><code>&nbsp;&nbsp;&nbsp;&nbsp;this.hands&nbsp;=&nbsp;2;</code></div>
+            <div><code>&nbsp;&nbsp;&nbsp;&nbsp;this.legs&nbsp;=&nbsp;2;</code></div>
+            <div><code>}</code></div>
+            <div><code>Monkey.prototype.walk&nbsp;=&nbsp;function&nbsp;()&nbsp;{&nbsp;alert('Monkey&nbsp;is&nbsp;walking');&nbsp;}</code></div>
+            <br />
+            <div><code>function&nbsp;Human()&nbsp;{&nbsp;}</code></div>
+            <div><code>Human.prototype.talk&nbsp;=&nbsp;function&nbsp;()&nbsp;{&nbsp;alert('Human&nbsp;is&nbsp;talking');&nbsp;}</code></div>
+            <div><code>Human.prototype.think&nbsp;=&nbsp;function&nbsp;()&nbsp;{&nbsp;alert('Human&nbsp;is&nbsp;thinking');&nbsp;}</code></div>
+            <div><code>Human.prototype.__proto__&nbsp;=&nbsp;new&nbsp;Monkey();</code></div>
+            <br />
+            <div><code>var&nbsp;human&nbsp;=&nbsp;new&nbsp;Human();</code></div>
+            <div><code>alert(human.hands);</code></div>
+            <div><code>human.walk();</code></div>
+            <div><code>human.think();</code></div>
+        </div>
+        <div class="text-center">
+            <a href="//index.html" class="btn btn-primary">Back to Home Page</a>
+        </div>
+    </div>
+</body>
+
+</html>

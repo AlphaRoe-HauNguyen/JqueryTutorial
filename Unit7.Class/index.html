@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Demo for Class via Prototype</title>
+    <link rel="stylesheet" href="https://bootswatch.com/paper/bootstrap.min.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center">Javascript - Class</h1>
+        <div id="calculator">
+            <form>
+                <fieldset>
+                    <legend>Calculator</legend>
+                    <div class="form-group">
+                        <label for="firstOp" class="control-label">First Operand</label>
+                        <input type="text" class="form-control" name="firstOp">
+                    </div>
+                    <div class="form-group">
+                        <label for="secondOp" class="control-label">Second Operand</label>
+                        <input type="text" class="form-control" name="secondOp">
+                    </div>
+                    <div class="form-group">
+                        <label for="result" class="control-label">Choose Operator</label>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="operator" value="add" checked> +
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="operator" value="subtract"> -
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="operator" value="multiply"> *
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="operator" value="divide"> /
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="result" class="control-label">Result</label>
+                        <input type="text" class="form-control" name="result" readonly>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="text-center">
+            <a href="//index.html" class="btn btn-primary">Back to Home Page</a>
+        </div>
+    </div>
+    <script type="text/javascript" src="./demo.js"></script>
+</body>
+
+</html>
